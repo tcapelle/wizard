@@ -1,0 +1,17 @@
+# Standard Python gitignore
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+__pycache__/
+
+# jupyter stuff
+*.ipynb_checkpoints
+
+
+# wandb stuff
+wandb/
+artifacts/
+
+# local data
+data/
