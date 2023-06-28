@@ -9,6 +9,7 @@ from utils import parse_arg
 
 RAW_AT = 'parambharat/wandb_docs_bot_dev/wandbot_vectorindex:latest'
 OUT_FILE = Path('data/dataset.jsonl')
+ENTITY = "prompt-eng"
 
 OUT_FILE.parent.mkdir(exist_ok=True, parents=True)
 
@@ -21,7 +22,7 @@ config = SimpleNamespace(
 # parse args using custom function
 config = parse_arg(config)
 
-run = wandb.init(project="wizard", job_type="preprocessing", config=config)
+run = wandb.init(entity=ENTITY, project="wizard", job_type="preprocessing", config=config)
 
 # get config and make it accessible
 config = wandb.config
