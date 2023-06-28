@@ -53,8 +53,9 @@ for k in d.keys():
 ds_as_list = [{"source":tup[0], "text":tup[1]} for tup in d.items()]
 
 if config.upload_table:
+    N = 10
     # create wandb table
-    table = wandb.Table(rows=ds_as_list, columns=["source", "text"])
+    table = wandb.Table(data=list(d.items())[0:N], columns=["source", "text"])
     
     # log table
     wandb.log({"dataset_table": table})
